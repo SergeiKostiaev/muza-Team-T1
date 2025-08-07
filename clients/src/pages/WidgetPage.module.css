@@ -3,15 +3,14 @@
     color: #333;
     font-size: 14px;
 
-    max-height: 115px;       /* ограничение по высоте */
-    overflow-y: auto;        /* вертикальная прокрутка */
-    overflow-x: hidden;      /* запрет горизонтальной прокрутки */
+    max-height: 115px;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    word-break: break-word;  /* перенос длинных слов */
-    white-space: normal;     /* перенос строк по умолчанию */
-    /* важный момент — ограничить ширину или сделать блок адаптивным */
-    width: 100%;             /* чтобы тело не превышало ширину контейнера */
-    box-sizing: border-box;  /* чтобы паддинги и бордеры учитывались */
+    word-break: break-word;
+    white-space: normal;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
