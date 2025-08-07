@@ -1,3 +1,20 @@
+.body {
+    margin: 0 0 8px;
+    color: #333;
+    font-size: 14px;
+
+    max-height: 115px;       /* ограничение по высоте */
+    overflow-y: auto;        /* вертикальная прокрутка */
+    overflow-x: hidden;      /* запрет горизонтальной прокрутки */
+
+    word-break: break-word;  /* перенос длинных слов */
+    white-space: normal;     /* перенос строк по умолчанию */
+    /* важный момент — ограничить ширину или сделать блок адаптивным */
+    width: 100%;             /* чтобы тело не превышало ширину контейнера */
+    box-sizing: border-box;  /* чтобы паддинги и бордеры учитывались */
+}
+
+
 .widget {
     display: flex;
     flex-direction: column;
@@ -17,6 +34,9 @@
     overflow: hidden;
 }
 
+.content, .row {
+    min-width: 0;
+}
 
 .header {
     display: flex;
@@ -137,6 +157,7 @@
     padding: 0;
     margin: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     flex-grow: 1;
 }
 
@@ -235,11 +256,11 @@
     font-weight: 500;
 }
 
-.body {
-    margin: 0 0 8px;
-    color: #333;
-    font-size: 14px;
-}
+/*.body {*/
+/*    margin: 0 0 8px;*/
+/*    color: #333;*/
+/*    font-size: 14px;*/
+/*}*/
 
 .tags {
     display: flex;
@@ -271,3 +292,6 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+
+
