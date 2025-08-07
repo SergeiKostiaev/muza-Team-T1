@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import  { useState } from 'react';
 import MDEditor from '@uiw/react-md-editor';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { addQuestion } from '../features/questions/questionsSlice';
 import styles from './CreateQuestionPage.module.css';
 
@@ -34,10 +34,10 @@ const CreateQuestionPage = () => {
             <aside className={styles.sidebar}>
                 <nav>
                     <ul>
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="/questions">Все вопросы</a></li>
-                        <li><a href="/tags">Метки</a></li>
-                        <li><a href="/create">Задать вопрос</a></li>
+                        <Link to="/">Главная</Link>
+                        <Link to="/questions">Все вопросы</Link>
+                        <Link to="/tags">Все теги</Link>
+                        <Link to="/ask">Задать вопрос</Link>
                     </ul>
                 </nav>
             </aside>

@@ -61,8 +61,8 @@ const QuestionItem = React.memo(({ q, onClick }: { q: Question; onClick: () => v
                     <div className={styles.tags}>
                         {q.tags.map((tag) => (
                             <span key={tag} className={styles.tag}>
-                {tag}
-              </span>
+                                {tag}
+                            </span>
                         ))}
                     </div>
 
@@ -83,6 +83,10 @@ const QuestionItem = React.memo(({ q, onClick }: { q: Question; onClick: () => v
         </li>
     );
 });
+
+const handleClick = () => {
+    window.parent.postMessage({ type: 'openCreateQuestion' }, '*');
+};
 
 const WidgetPage = () => {
     const questions = useSelector((state: RootState) => state.questions.items);
@@ -151,20 +155,22 @@ const WidgetPage = () => {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                     >
-                        <rect x="1" y="1" width="7" height="7" stroke="#8B8A8A" strokeWidth="2" />
-                        <rect x="12" y="12" width="7" height="7" stroke="#8B8A8A" strokeWidth="2" />
-                        <rect x="1" y="12" width="7" height="7" stroke="#8B8A8A" strokeWidth="2" />
-                        <rect x="12" y="1" width="7" height="7" stroke="#8B8A8A" strokeWidth="2" />
+                        <rect x="1" y="1" width="7" height="7" stroke="#8B8A8A" strokeWidth="2"/>
+                        <rect x="12" y="12" width="7" height="7" stroke="#8B8A8A" strokeWidth="2"/>
+                        <rect x="1" y="12" width="7" height="7" stroke="#8B8A8A" strokeWidth="2"/>
+                        <rect x="12" y="1" width="7" height="7" stroke="#8B8A8A" strokeWidth="2"/>
                     </svg>
                     <h2>Вопросы</h2>
                 </div>
-                <button onClick={() => navigate('/ask')} className={styles.askBtn}>
-                    Задать вопрос
-                </button>
+                {/*<button onClick={() => navigate('/ask')} className={styles.askBtn}>*/}
+                {/*    Задать вопрос*/}
+                {/*</button>*/}
+                <button onClick={handleClick}>Задать вопрос</button>
+
             </div>
 
             <div className={styles.line_active}>
-                <h3>Активные</h3>
+            <h3>Активные</h3>
                 <span></span>
             </div>
             <div className={styles.contentWrapper}>
